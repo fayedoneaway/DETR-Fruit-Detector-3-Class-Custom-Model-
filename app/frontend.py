@@ -58,7 +58,9 @@ def draw_boxes(pil_img, results):
 
         # Text background for readability
         text = cls
-        text_w, text_h = draw.textsize(text, font=font)
+        bbox = draw.textbbox((0, 0), text, font=font)
+        text_w = bbox[2] - bbox[0]
+        text_h = bbox[3] - bbox[1]
         text_x = box[0]
         text_y = max(0, box[1] - text_h - 4)
 
