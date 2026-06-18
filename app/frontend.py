@@ -18,8 +18,11 @@ CLASSES = ["Apple", "Mango", "Orange"]
 
 @st.cache_resource
 def load_model():
-    processor = DetrImageProcessor.from_pretrained(MODEL_DIR)
-    model = DetrForObjectDetection.from_pretrained(MODEL_DIR)
+    repo_id = https://huggingface.co/fayedoneaway/DETR_Portfolio_Project
+    token = os.environ["HF_TOKEN"]
+    
+    processor = DetrImageProcessor.from_pretrained(repo_id, token=token)
+    model = DetrForObjectDetection.from_pretrained(repo_id, token=token)
     return processor, model
 
 
