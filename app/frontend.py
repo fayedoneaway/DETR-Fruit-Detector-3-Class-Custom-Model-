@@ -6,7 +6,7 @@ import numpy as np
 import os
 
 MODEL_DIR = "model"
-IMAGE_DIR = "raw_images"
+IMAGE_DIR = "demo/raw_images"
 THRESH = 0.6
 
 
