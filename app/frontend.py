@@ -18,7 +18,7 @@ CLASSES = ["Apple", "Mango", "Orange"]
 
 @st.cache_resource
 def load_model():
-    repo_id = https://huggingface.co/fayedoneaway/DETR_Portfolio_Project
+    repo_id = "fayedoneaway/DETR_Portfolio_Project"
     token = os.environ["HF_TOKEN"]
     
     processor = DetrImageProcessor.from_pretrained(repo_id, token=token)
