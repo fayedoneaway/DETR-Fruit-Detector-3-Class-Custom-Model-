@@ -37,16 +37,39 @@ def run_detr(processor, model, pil_img):
     return results
 
 
+from PIL import ImageDraw, ImageFont
+
 def draw_boxes(pil_img, results):
     img = pil_img.copy()
     draw = ImageDraw.Draw(img)
+
+    # Always available, guaranteed to load
     font = ImageFont.load_default()
 
     for score, label, box in zip(results["scores"], results["labels"], results["boxes"]):
         box = [int(x) for x in box]
         cls = model.config.id2label[int(label)]
-        draw.rectangle(box, outline="yellow", width=3)
-        draw.text((box[0], box[1] - 25), cls, fill="yellow", font=font)
+
+        # High-contrast color for grayscale images
+        color = "cyan"
+
+        # Draw bounding box
+        draw.rectangle(box, outline=color, width=3)
+
+        # Text background for readability
+        text = cls
+        text_w, text_h = draw.textsize(text, font=font)
+        text_x = box[0]
+        text_y = max(0, box[1] - text_h - 4)
+
+        # Background rectangle
+        draw.rectangle(
+            [text_x, text_y, text_x + text_w + 4, text_y + text_h + 4],
+            fill=color
+        )
+
+        # Text in black for contrast
+        draw.text((text_x + 2, text_y + 2), text, fill="black", font=font)
 
     return img
 
