@@ -16,7 +16,7 @@ st.title("Apple / Orange / Mango DETR Object Detection")
 CLASSES = ["Apple", "Mango", "Orange"]
 
 
-@st.cache_resource
+#@st.cache_resource
 def load_model():
     repo_id = "fayedoneaway/DETR_Portfolio_Project"
     token = os.environ["HF_TOKEN"]
