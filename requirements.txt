@@ -6,3 +6,4 @@ opencv-python
 pillow
 datasets
 huggingface_hub
+timm
