@@ -40,7 +40,7 @@ def run_detr(processor, model, pil_img):
 def draw_boxes(pil_img, results):
     img = pil_img.copy()
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("arial.ttf", 20)
+    font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
 
     for score, label, box in zip(results["scores"], results["labels"], results["boxes"]):
         box = [int(x) for x in box]
