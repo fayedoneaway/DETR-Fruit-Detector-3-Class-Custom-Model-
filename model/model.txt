@@ -1,0 +1,9 @@
+The trained model weights are not stored in this GitHub repository because the file size (158 MB) exceeds GitHub’s 100 MB limit.
+
+The actual model file (model.safetensors) is stored externally on Hugging Face.
+
+https://huggingface.co/fayedoneaway/DETR_Portfolio_Project/tree
+
+During deployment, the app downloads the model from Hugging Face at runtime.
+
+

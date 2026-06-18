@@ -1,0 +1,8 @@
+streamlit
+torch 
+transformers
+numpy
+opencv-python
+pillow
+datasets
+huggingface_hub

@@ -1,0 +1,21 @@
+#Ignore Libraries
+
+Lib/
+
+#Ignore virtual environments
+ven1
+Scripts/
+pyvenv.cfg
+.share/
+.idea
+
+#datasets
+predictions
+detr-output
+fruit.v1i.yolov8
+img
+
+#model
+config
+model.safetensors
+preprocessor_config
